@@ -1,5 +1,3 @@
-# 再帰処理が重すぎて実行できない.
-
 initTurn=2
 initBoard=[
   0,0,1,0,0,
@@ -15,7 +13,7 @@ def runProgram():
 
   for i in range(5):
     for j in range(5):
-      if 5*j+i==0:
+      if initBoard[5*j+i]==0:
         checkList.append(main(initTurn, 5*j+i, initBoard))
         break
 
@@ -42,7 +40,7 @@ def main(turn, index, _board):
 
   for i in range(5):
     for j in range(5):
-      if 5*j+i==0:
+      if board[5*j+i]==0:
         checkList.append(main(nextTurn, 5*j+i, board))
         break
 
